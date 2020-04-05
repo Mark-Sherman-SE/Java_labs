@@ -22,30 +22,6 @@ public class Triangle implements Polygon {
     public Triangle(Dot firstDot, Dot secondDot, Dot thirdDot) {
         if (isTriangle(firstDot, secondDot, thirdDot)) {
             this.dots[0] = firstDot;
-           /* if (secondDot.getX() > firstDot.getX() && thirdDot.getX() > firstDot.getX()) {
-                if (secondDot.getY() < thirdDot.getY()) {
-                    this.dots[1] = secondDot;
-                    this.dots[2] = thirdDot;
-                } else {
-                    this.dots[1] = thirdDot;
-                    this.dots[2] = secondDot;
-                }
-            } else if (secondDot.getX() < firstDot.getX() && thirdDot.getX() < firstDot.getX()) {
-                if (secondDot.getY() > thirdDot.getY()) {
-                    this.dots[1] = secondDot;
-                    this.dots[2] = thirdDot;
-                } else {
-                    this.dots[1] = thirdDot;
-                    this.dots[2] = secondDot;
-                }
-            } else if (secondDot.getX() < firstDot.getX() ^ thirdDot.getX() < firstDot.getX()) {
-                if (secondDot.getY() < thirdDot.getY()) {
-                    if (secondDot.getY() > firstDot.getY() && thirdDot.getX() > firstDot.getX()) {
-                        this.dots[1] = thirdDot;
-                        this.dots[2] = secondDot;
-                    } else if (thirdDot.getX() < firstDot.getX() && secondDot.getY())
-                }
-            }*/
             this.dots[1] = secondDot;
             this.dots[2] = thirdDot;
             this.sides[0] = getLength(this.dots[0], this.dots[1]);

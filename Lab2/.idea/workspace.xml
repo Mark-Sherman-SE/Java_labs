@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10a47833-bc06-40a8-bf19-d9a8081b9db0" name="Default Changelist" comment="" />
+    <list default="true" id="10a47833-bc06-40a8-bf19-d9a8081b9db0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Lab4/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/spbstu/main/shapes/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/spbstu/main/shapes/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/spbstu/main/shapes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/spbstu/main/shapes/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/out/production/Lab3/Main/Robot.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/out/production/Lab3/Main/Robot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/src/Main/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/src/Main/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab4/Lab4.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab4/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab4/target/classes/META-INF/Lab4.kotlin_module" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +33,14 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1XD6Cfjum8N64KgsIvpDHGXhNcD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -38,7 +50,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -87,5 +99,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

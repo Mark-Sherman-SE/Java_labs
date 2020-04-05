@@ -18,15 +18,19 @@ public class Robot extends Thread {
         try {
             while (true) {
                 student = students.peek();
-                if (student != null && student.getSubject().equals(subject)) {
-                    student = students.take();
-                    System.out.println(subject + " teacher started verifying");
-                    while (student.getLabsCount() != 0) {
-                        System.out.println("Robot " + subject + " is working, " + student.getLabsCount() + " left");
-                        student.verifyLabs();
-                        sleep(1000);
+                if (student != null) {
+                    if (student.getSubject().equals(subject)) {
+                        student = students.take();
+                        System.out.println(subject + " teacher started verifying");
+                        while (student.getLabsCount() != 0) {
+                            System.out.println("Robot " + subject + " is working, " + student.getLabsCount() + " left");
+                            student.verifyLabs();
+                            sleep(1000);
+                        }
+                        System.out.println(subject + " teacher finished verifying");
+                    } else if (student.getSubject().equals("finish")) {
+                        break;
                     }
-                    System.out.println(subject + " teacher finished verifying");
                 }
             }
         } catch (InterruptedException e) {

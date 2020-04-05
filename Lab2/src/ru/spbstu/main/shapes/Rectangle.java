@@ -74,8 +74,6 @@ public class Rectangle implements Polygon {
     private void findNewCoordinates(int angleOfRotation) {
         double angleOfRotationInRadians = angleOfRotation * Math.PI / 180;
         for (int i = 1; i < dots.length; ++i) {
-            //float x = (float)((dots[i].x - dots[0].x) * Math.cos(angleOfRotationInRadians) - (dots[i].y - dots[0].y) * Math.sin(angleOfRotationInRadians) + dots[0].x);
-            //float y = (float)((dots[i].x - dots[0].x) * Math.sin(angleOfRotationInRadians) + (dots[i].y - dots[0].y) * Math.cos(angleOfRotationInRadians) + dots[0].y);
             dots[i] = findNewCoordinates(dots[0], dots[i], angleOfRotation);
         }
     }
