@@ -6,18 +6,33 @@ public class DBProcessor {
     private final DatabaseConnection database;
     private int countOfProducts = 0;
 
-    public DBProcessor (DatabaseConnection database) {
+    public DBProcessor (int numberOfProducts, DatabaseConnection database) {
         this.database = database;
         try(Statement statement = database.getConnection().createStatement()) {
-            statement.execute("truncate table goods.products");
-            String[] string = {"банан", "кокос", "перец", "пончик", "амиак", "газель", "петрушка", "сушки", "корм", "мел"};
-            int[] cost = {20, 50, 35, 25, 120, 2500, 300, 15, 87, 250};
-            for (int i = 0; i < string.length; ++i) {
-                insert(string[i], cost[i]);
+            try {
+                statement.executeUpdate(cleanTable("goods.products"));
+            } catch (SQLSyntaxErrorException e) {
+                statement.executeUpdate(createTable("goods.products"));
+            }
+            for (int i = 1; i < numberOfProducts + 1; ++i) {
+                insert("товар" + i, 1 + (int) (Math.random() * 2000));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    private String cleanTable(String tableName) {
+        return "truncate table " + tableName;
+    }
+
+    private String createTable(String tableName) {
+        StringBuilder query = new StringBuilder();
+        query.append("(id int(6) unsigned auto_increment primary key, ");
+        query.append("prodid int(6) not null, ");
+        query.append("title varchar(30) not null, ");
+        query.append("cost int(6) unsigned not null )");
+        return query.toString();
     }
 
     public void insert(String title, int cost) {
@@ -29,8 +44,8 @@ public class DBProcessor {
                 System.out.println("Товар с именем " + title + " уже существует");
                 return;
             }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         query = "insert into goods.products (prodid, title, cost) values (?, ?, ?)";
         try(PreparedStatement preparedStatement = database.getConnection().prepareStatement(query)) {
@@ -39,8 +54,8 @@ public class DBProcessor {
             preparedStatement.setString(2, title);
             preparedStatement.setInt(3, cost);
             preparedStatement.execute();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -49,8 +64,8 @@ public class DBProcessor {
         try(PreparedStatement preparedStatement = database.getConnection().prepareStatement(query)) {
             preparedStatement.setString(1, title);
             preparedStatement.executeUpdate();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -59,8 +74,8 @@ public class DBProcessor {
         try(PreparedStatement preparedStatement = database.getConnection().prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             show(resultSet);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -75,8 +90,8 @@ public class DBProcessor {
             } else {
                 System.out.println("Такого товара нет");
             }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -86,8 +101,8 @@ public class DBProcessor {
             preparedStatement.setInt(1, cost);
             preparedStatement.setString(2, title);
             preparedStatement.executeUpdate();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -98,8 +113,8 @@ public class DBProcessor {
             preparedStatement.setInt(2,max);
             ResultSet resultSet = preparedStatement.executeQuery();
             show(resultSet);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 

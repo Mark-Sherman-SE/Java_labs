@@ -25,7 +25,8 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="844fc04a-3582-43a4-a860-0c1006d977f3">
-        <schema name="goods" object-types="table, procedure, function, view" />
+        <schema name="goods" object-types="procedure, column, index, function, constraint, view, dataset trigger, table" />
+        <schema name="mysql" object-types="procedure, function, view, table" />
       </connection>
     </loaded-nodes>
   </component>
@@ -79,7 +80,7 @@
           <database value="mysql" />
           <type value="USER_PASSWORD" />
           <user value="root" />
-          <deprecated-pwd value="bWF1cmdzaGVybWluYXRvcg==" />
+          <deprecated-pwd value="cm9vdA==" />
         </database>
         <properties>
           <auto-commit value="false" />

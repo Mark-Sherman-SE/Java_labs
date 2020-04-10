@@ -1,13 +1,11 @@
 package com.jdbc;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DatabaseConnection implements AutoCloseable {
     private static DatabaseConnection instance;
     private Connection connection;
-    private final String url = "jdbc:mysql://localhost:3306/mysql";
+    private final String url = "jdbc:mysql://localhost:3306/mysql?serverTimezone=Europe/Moscow";
     private final String username = "root";
     private final String password = "root";
 
