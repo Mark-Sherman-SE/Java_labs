@@ -16,7 +16,6 @@ public class Generator extends Thread {
             for (int i = 0; i < iterations; ++i) {
                 System.out.println("Generator is working");
                 generateStudent();
-                sleep(1000);
             }
             students.put(new Student("finish", 0));
         } catch (InterruptedException e) {

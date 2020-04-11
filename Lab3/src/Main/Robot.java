@@ -10,7 +10,7 @@ public class Robot extends Thread {
     public Robot(BlockingDeque<Student> students, String subject) {
         this.students = students;
         this.subject = subject;
-        currentThread().setName(subject);
+        setName(subject);
     }
 
     @Override
@@ -23,9 +23,8 @@ public class Robot extends Thread {
                         student = students.take();
                         System.out.println(subject + " teacher started verifying");
                         while (student.getLabsCount() != 0) {
-                            System.out.println("Robot " + subject + " is working, " + student.getLabsCount() + " left");
+                            System.out.println("Robot " + subject + " is working, " + student.getLabsCount() + " left, student number " + student.getNumberOfStudent());
                             student.verifyLabs();
-                            sleep(1000);
                         }
                         System.out.println(subject + " teacher finished verifying");
                     } else if (student.getSubject().equals("finish")) {
