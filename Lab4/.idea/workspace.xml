@@ -4,14 +4,8 @@
     <list default="true" id="9566c61d-39ec-468d-93cc-631f6efffb79" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Lab2/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab2/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jdbc/DBProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jdbc/DBProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jdbc/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jdbc/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jdbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jdbc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jdbc/DBProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jdbc/DBProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jdbc/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jdbc/DatabaseConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jdbc/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jdbc/Main.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

@@ -28,6 +28,7 @@ public class DBProcessor {
 
     private String createTable(String tableName) {
         StringBuilder query = new StringBuilder();
+        query.append("create table ").append(tableName);
         query.append("(id int(6) unsigned auto_increment primary key, ");
         query.append("prodid int(6) not null, ");
         query.append("title varchar(30) not null, ");
