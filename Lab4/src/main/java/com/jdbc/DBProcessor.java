@@ -32,11 +32,11 @@ public class DBProcessor {
         query.append("(id int(6) unsigned auto_increment primary key, ");
         query.append("prodid int(6) not null, ");
         query.append("title varchar(30) not null, ");
-        query.append("cost int(6) unsigned not null )");
+        query.append("cost double(20, 2) unsigned not null )");
         return query.toString();
     }
 
-    public void insert(String title, int cost) {
+    public void insert(String title, double cost) {
         String query = "select title from goods.products where title=?";
         try(PreparedStatement statement = database.getConnection().prepareStatement(query)) {
             statement.setString(1, title);
@@ -53,7 +53,7 @@ public class DBProcessor {
             ++countOfProducts;
             preparedStatement.setInt(1, countOfProducts);
             preparedStatement.setString(2, title);
-            preparedStatement.setInt(3, cost);
+            preparedStatement.setDouble(3, cost);
             preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -96,10 +96,10 @@ public class DBProcessor {
         }
     }
 
-    public void updateCost(String title, int cost) {
+    public void updateCost(String title, double cost) {
         String query = "update goods.products set cost=? where title=?";
         try(PreparedStatement preparedStatement = database.getConnection().prepareStatement(query)) {
-            preparedStatement.setInt(1, cost);
+            preparedStatement.setDouble(1, cost);
             preparedStatement.setString(2, title);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -107,11 +107,11 @@ public class DBProcessor {
         }
     }
 
-    public void showInterval(int min, int max) {
+    public void showInterval(double min, double max) {
         String query = "select * from goods.products where cost between ? AND ?";
         try(PreparedStatement preparedStatement = database.getConnection().prepareStatement(query)) {
-            preparedStatement.setInt(1, min);
-            preparedStatement.setInt(2,max);
+            preparedStatement.setDouble(1, min);
+            preparedStatement.setDouble(2, max);
             ResultSet resultSet = preparedStatement.executeQuery();
             show(resultSet);
         } catch (SQLException e) {
@@ -124,7 +124,7 @@ public class DBProcessor {
             String string = resultSet.getInt("id") +
                     " " + resultSet.getInt("prodid") +
                     " " + resultSet.getString("title") +
-                    " " + resultSet.getInt("cost");
+                    " " + resultSet.getDouble("cost");
             System.out.println(string);
         }
     }

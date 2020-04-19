@@ -2,6 +2,7 @@ package com.jdbc;
 
 import java.sql.SQLException;
 import java.util.InputMismatchException;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -9,10 +10,15 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Enter the number of products");
         Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.US);
         int n;
         do {
             try {
                 n = scanner.nextInt();
+                if (n < 0) {
+                    System.out.println("Enter positive number");
+                    continue;
+                }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input");
                 scanner.nextLine();
@@ -30,7 +36,11 @@ public class Main {
                     switch (command) {
                         case "/add": {
                             String title = scanner.next();
-                            int cost = scanner.nextInt();
+                            double cost = scanner.nextDouble();
+                            if (cost < 0) {
+                                System.out.println("Cost must be positive");
+                                break;
+                            }
                             dbProcessor.insert(title, cost);
                             break;
                         }
@@ -49,13 +59,25 @@ public class Main {
                         }
                         case "/change_price": {
                             String title = scanner.next();
-                            int cost = scanner.nextInt();
+                            double cost = scanner.nextDouble();
+                            if (cost < 0) {
+                                System.out.println("Cost must be positive");
+                                break;
+                            }
                             dbProcessor.updateCost(title, cost);
                             break;
                         }
                         case "/filter_by_price":
-                            int min = scanner.nextInt();
-                            int max = scanner.nextInt();
+                            double min = scanner.nextDouble();
+                            double max = scanner.nextDouble();
+                            if (max < 0 || min < 0) {
+                                System.out.println("Borders must be greater than zero");
+                                break;
+                            }
+                            if (max < min) {
+                                System.out.println("The right border should be greater than the left");
+                                break;
+                            }
                             dbProcessor.showInterval(min, max);
                             break;
                         case "/finish":
@@ -67,7 +89,7 @@ public class Main {
                             break;
                     }
                 } catch (InputMismatchException ex) {
-                    System.out.println("Invalid input of int");
+                    System.out.println("Invalid input of number");
                 }
             }
         } catch (SQLException e) {
